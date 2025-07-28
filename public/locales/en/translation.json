@@ -1,0 +1,17 @@
+{
+    "home": {
+        "title": "Welcome to Pupster",
+        "description": "A fun app to discover and search for dogs!",
+        "buttonDiscover": "Discover Dogs",
+        "buttonSearch": "Search by Breed"
+    },
+    "nav": {
+        "home": "Home",
+        "discover": "Discover",
+        "search": "Search"
+    },
+    "switch_to_english": "Switch to English",
+    "switch_to_spanish": "Switch to Spanish",
+    "light_mode": "Light Mode",
+    "dark_mode": "Dark Mode"
+}

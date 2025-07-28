@@ -1,0 +1,17 @@
+{
+    "home": {
+        "title": "Bienvenido a Pupster",
+        "description": "¡Una aplicación divertida para descubrir y buscar perros!",
+        "buttonDiscover": "Descubrir Perros",
+        "buttonSearch": "Buscar por Raza"
+    },
+    "nav": {
+        "home": "Inicio",
+        "discover": "Descubrir",
+        "search": "Buscar"
+    },
+    "switch_to_english": "Cambiar a Inglés",
+    "switch_to_spanish": "Cambiar a Español",
+    "light_mode": "Modo Claro",
+    "dark_mode": "Modo Oscuro"
+}

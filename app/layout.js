@@ -1,16 +1,16 @@
 import './globals.css';
+import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
-import { ThemeProvider } from '../context/ThemeContext';
 
 export const metadata = {
     title: 'Pupster',
-    description: 'Multilingual dog discovery app',
+    description: 'Discover your new dog friend!',
 };
 
 export default function RootLayout({ children }) {
     return (
         <html lang='en'>
-            <body className='bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300'>
+            <body>
                 <ThemeProvider>
                     <Header />
                     {children}

@@ -1,51 +1,36 @@
 'use client';
+import '../lib/i18n';
+
+import { useTheme } from '../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import { useTheme } from '../../context/ThemeContext';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 
 export default function Header() {
     const { theme, toggleTheme } = useTheme();
+    const { t, i18n, ready } = useTranslation();
+    if (!ready) return null;
 
     return (
-        <header className='p-6 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white shadow-lg'>
-            <nav className='flex items-center justify-between max-w-4xl mx-auto'>
-                <div className='flex space-x-8 text-lg font-semibold'>
-                    <Link
-                        href='/'
-                        className='hover:text-blue-500 dark:hover:text-blue-400'
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        href='/discover'
-                        className='hover:text-blue-500 dark:hover:text-blue-400'
-                    >
-                        Discover
-                    </Link>
-                    <Link
-                        href='/search'
-                        className='hover:text-blue-500 dark:hover:text-blue-400'
-                    >
-                        Search
-                    </Link>
-                </div>
-                <button
-                    onClick={toggleTheme}
-                    className='flex items-center gap-2 bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600 transition'
-                >
+        <header className='p-4 flex justify-between items-center bg-gray-100 dark:bg-zinc-900 text-black dark:text-white'>
+            <div className='flex gap-4'>
+                <Link href='/' className='font-bold'>
+                    {t('nav.home')}
+                </Link>
+                <Link href='/discover'>{t('nav.discover')}</Link>
+                <Link href='/search'>{t('nav.search')}</Link>
+            </div>
+            <div className='flex gap-4 items-center'>
+                <button onClick={toggleTheme}>
                     {theme === 'light' ? (
-                        <>
-                            <MoonIcon className='h-5 w-5' />
-                            <span>Dark Mode</span>
-                        </>
+                        <MoonIcon className='w-5 h-5' />
                     ) : (
-                        <>
-                            <SunIcon className='h-5 w-5' />
-                            <span>Light Mode</span>
-                        </>
+                        <SunIcon className='w-5 h-5' />
                     )}
                 </button>
-            </nav>
+                <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+                <button onClick={() => i18n.changeLanguage('es')}>ES</button>
+            </div>
         </header>
     );
 }
